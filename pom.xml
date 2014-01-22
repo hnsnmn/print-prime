@@ -2,14 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.daum.tutorials</groupId>
-    <artifactId>baseball-game</artifactId>
+    <artifactId>print-prime</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Word Wrap for TDD</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
-            <artifactId>junit-dep</artifactId>
+            <artifactId>junit</artifactId>
             <version>4.8.2</version>
             <scope>test</scope>
         </dependency>
