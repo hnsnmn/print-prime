@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class PrintPrimesTest {
 	@Test
-	public void shuld_print_result() {
+	public void should_print_result() {
 		PrintPrimes.main(new String[0]);
 	}
 }
