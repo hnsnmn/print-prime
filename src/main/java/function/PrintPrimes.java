@@ -6,9 +6,8 @@ public class PrintPrimes {
 	private final int columns = 4;
 
 	public void main(String[] args) {
-		new PrimeGenerator().invoke();
 		PrimeGenerator primeGenerator = new PrimeGenerator();
-		int[] primes = primeGenerator.invoke();
+		int[] primes = primeGenerator.invoke(numberOfPrimes);
 		new NumberPrinter(linesPerPage, columns).invoke(primes, numberOfPrimes);
 	}
 	private class PrimeGenerator {
@@ -22,7 +21,7 @@ public class PrintPrimes {
 		private int n;
 		private int[] multiples;
 
-		public int[] invoke() {
+		public int[] invoke(int numberOfPrimes) {
 			primes = new int[numberOfPrimes + 1];
 			multiples = new int[ordmax + 1];
 			candidate = 1;
@@ -30,7 +29,7 @@ public class PrintPrimes {
 			primes[1] = 2;
 			ord = 2;
 			square = 9;
-			while (primeIndex < numberOfPrimes) {
+			while (primeIndex < PrintPrimes.this.numberOfPrimes) {
 				do {
 					candidate = candidate + 2;
 					if (candidate == square) {
