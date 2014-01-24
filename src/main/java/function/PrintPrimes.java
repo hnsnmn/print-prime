@@ -29,7 +29,7 @@ public class PrintPrimes {
 			primes[1] = 2;
 			ord = 2;
 			square = 9;
-			while (primeIndex < PrintPrimes.this.numberOfPrimes) {
+			while (primeIndex < numberOfPrimes) {
 				findNextPrime();
 				primeIndex = primeIndex + 1;
 				primes[primeIndex] = candidate;
