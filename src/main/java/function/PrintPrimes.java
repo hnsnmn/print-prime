@@ -9,7 +9,7 @@ public class PrintPrimes {
 		new PrimePrinterHelper().invoke();
 		PrimePrinterHelper primePrinterHelper = new PrimePrinterHelper();
 		int[] primes = primePrinterHelper.invoke();
-		primePrinterHelper.printNumbers(primes, numberOfPrimes, linesPerPage, columns);
+		new NumberPrinter(linesPerPage, columns).invoke(primes, numberOfPrimes);
 	}
 	private class PrimePrinterHelper {
 		private final int ordmax = 30;
@@ -53,9 +53,6 @@ public class PrintPrimes {
 			return primes;
 		}
 
-		private void printNumbers(int[] numbers, int numberOfPrimes, int linesPerPage, int columns) {
-			new NumberPrinter(linesPerPage, columns).invoke(numbers, numberOfPrimes);
-		}
 	}
 
 }
