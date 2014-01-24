@@ -1,12 +1,15 @@
 package function;
 
 public class PrintPrimes {
+	private final int numberOfPrimes = 1000;
+
 	public void main(String[] args) {
 		new PrimePrinterHelper().invoke();
+		PrimePrinterHelper primePrinterHelper = new PrimePrinterHelper();
+		int[] primes = primePrinterHelper.invoke();
+		primePrinterHelper.printNumbers(primes, numberOfPrimes);
 	}
-
 	private class PrimePrinterHelper {
-		private final int numberOfPrimes = 1000;
 		private final int linesPerPage = 50;
 		private final int columns = 4;
 		private final int ordmax = 30;
@@ -23,7 +26,7 @@ public class PrintPrimes {
 		private int n;
 		private int[] multiples;
 
-		public void invoke() {
+		public int[] invoke() {
 			multiples = new int[ordmax + 1];
 			candidate = 1;
 			primeIndex = 1;
@@ -51,19 +54,19 @@ public class PrintPrimes {
 				primeIndex = primeIndex + 1;
 				primes[primeIndex] = candidate;
 			}
-			printNumbers(primes, numberOfPrimes);
+			return primes;
 		}
 
 		private void printNumbers(int[] numbers, int numberOfPrimes) {
 			pagenumber = 1;
 			pageoffset = 1;
-			while (pageoffset <= this.numberOfPrimes) {
-				System.out.println("The First " + this.numberOfPrimes +
+			while (pageoffset <= numberOfPrimes) {
+				System.out.println("The First " + numberOfPrimes +
 						" Prime Numbers --- Page " + pagenumber);
 				System.out.println("");
 				for (rowoffset = pageoffset; rowoffset < pageoffset + linesPerPage; rowoffset++) {
 					for (column = 0; column < columns; column++)
-						if (rowoffset + column * linesPerPage <= this.numberOfPrimes)
+						if (rowoffset + column * linesPerPage <= numberOfPrimes)
 							System.out.format("%10d", numbers[rowoffset + column * linesPerPage]);
 					System.out.println("");
 				}
